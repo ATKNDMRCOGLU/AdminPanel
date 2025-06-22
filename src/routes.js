@@ -3,6 +3,12 @@ import React from 'react'
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
+const MusteriListesi = React.lazy(() => import('./views/musteriler/musteri_listesi'))
+const YeniMusteriEkle = React.lazy(() => import('./views/musteriler/yeni_musteri_ekle'))
+const Page404 = React.lazy(() => import('./views/pages/page404/Page404'))
+const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
+
+
 
 // Base
 const Accordion = React.lazy(() => import('./views/base/accordion/Accordion'))
@@ -52,6 +58,9 @@ const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 const routes = [
+  
+  { path: '/musteriler', name: 'Müşteri Listesi', element: MusteriListesi },
+  { path: '/musteri-ekle', name: 'Yeni Müşteri Ekle', element: YeniMusteriEkle },
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },

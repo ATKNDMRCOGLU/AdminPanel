@@ -1,21 +1,14 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
 import {
-  cilBell,
-  cilCalculator,
   cilChartPie,
-  cilCursor,
-  cilDescription,
-  cilDrop,
-  cilExternalLink,
   cilNotes,
-  cilPencil,
-  cilPuzzle,
   cilSpeedometer,
   cilStar,
+  cilExternalLink,
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
-import { href } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const _nav = [
   {
@@ -23,9 +16,8 @@ const _nav = [
     name: 'Panel',
     to: '/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
-    
+    component: NavLink,
   },
-  
   {
     component: CNavTitle,
     name: 'Araçlar',
@@ -33,36 +25,37 @@ const _nav = [
   {
     component: CNavGroup,
     name: 'Müşteriler',
-    to: '/musteriler',
     items: [
       {
         component: CNavItem,
         name: 'Müşteri Listesi',
-        to: '/musterilistesi',
+        to: '/musteriler', // 🔧 DÜZELTİLDİ
+        component: NavLink,
       },
       {
         component: CNavItem,
         name: 'Yeni Müşteri Ekle',
-        to: '/musteri\ekle',
+        to: '/musteri-ekle',
+        component: NavLink,
       },
     ],
   },
   {
     component: CNavGroup,
     name: 'İş Ortakları',
-    to: '/isortaklari',
     items: [
       {
         component: CNavItem,
         name: 'İş Ortağı Listesi',
         to: '/isortaklari/is-ortaklari-listesi',
+        component: NavLink,
       },
       {
         component: CNavItem,
         name: 'Yeni İş Ortağı Ekle',
         to: '/isortaklari/yeni-is-ortagi-ekle',
+        component: NavLink,
       },
-      
     ],
   },
   {
@@ -74,120 +67,36 @@ const _nav = [
         component: CNavItem,
         name: 'Form Control',
         to: '/forms/form-control',
+        component: NavLink,
       },
       {
         component: CNavItem,
         name: 'Select',
         to: '/forms/select',
+        component: NavLink,
       },
       {
         component: CNavItem,
         name: (
-          <React.Fragment>
-            {'Multi Select'}
+          <>
+            Multi Select
             <CIcon icon={cilExternalLink} size="sm" className="ms-2" />
-          </React.Fragment>
+          </>
         ),
         href: 'https://coreui.io/react/docs/forms/multi-select/',
-        badge: {
-          color: 'danger',
-          text: 'PRO',
-        },
+        badge: { color: 'danger', text: 'PRO' },
       },
       {
         component: CNavItem,
         name: 'Checks & Radios',
         to: '/forms/checks-radios',
+        component: NavLink,
       },
       {
         component: CNavItem,
         name: 'Range',
         to: '/forms/range',
-      },
-      {
-        component: CNavItem,
-        name: (
-          <React.Fragment>
-            {'Range Slider'}
-            <CIcon icon={cilExternalLink} size="sm" className="ms-2" />
-          </React.Fragment>
-        ),
-        href: 'https://coreui.io/react/docs/forms/range-slider/',
-        badge: {
-          color: 'danger',
-          text: 'PRO',
-        },
-      },
-      {
-        component: CNavItem,
-        name: (
-          <React.Fragment>
-            {'Rating'}
-            <CIcon icon={cilExternalLink} size="sm" className="ms-2" />
-          </React.Fragment>
-        ),
-        href: 'https://coreui.io/react/docs/forms/rating/',
-        badge: {
-          color: 'danger',
-          text: 'PRO',
-        },
-      },
-      {
-        component: CNavItem,
-        name: 'Input Group',
-        to: '/forms/input-group',
-      },
-      {
-        component: CNavItem,
-        name: 'Floating Labels',
-        to: '/forms/floating-labels',
-      },
-      {
-        component: CNavItem,
-        name: (
-          <React.Fragment>
-            {'Date Picker'}
-            <CIcon icon={cilExternalLink} size="sm" className="ms-2" />
-          </React.Fragment>
-        ),
-        href: 'https://coreui.io/react/docs/forms/date-picker/',
-        badge: {
-          color: 'danger',
-          text: 'PRO',
-        },
-      },
-      {
-        component: CNavItem,
-        name: 'Date Range Picker',
-        href: 'https://coreui.io/react/docs/forms/date-range-picker/',
-        badge: {
-          color: 'danger',
-          text: 'PRO',
-        },
-      },
-      {
-        component: CNavItem,
-        name: (
-          <React.Fragment>
-            {'Time Picker'}
-            <CIcon icon={cilExternalLink} size="sm" className="ms-2" />
-          </React.Fragment>
-        ),
-        href: 'https://coreui.io/react/docs/forms/time-picker/',
-        badge: {
-          color: 'danger',
-          text: 'PRO',
-        },
-      },
-      {
-        component: CNavItem,
-        name: 'Layout',
-        to: '/forms/layout',
-      },
-      {
-        component: CNavItem,
-        name: 'Validation',
-        to: '/forms/validation',
+        component: NavLink,
       },
     ],
   },
@@ -196,38 +105,37 @@ const _nav = [
     name: 'Charts',
     to: '/charts',
     icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
+    component: NavLink,
   },
   {
     component: CNavGroup,
     name: 'Ürünler',
-    to: '/urunler',
     items: [
       {
         component: CNavItem,
         name: 'Ürün Listesi',
         to: '/urunler/urun-listesi',
+        component: NavLink,
       },
       {
         component: CNavItem,
         name: 'Yeni Ürün Ekle',
         to: '/urunler/yeni-urun-ekle',
+        component: NavLink,
       },
-     
     ],
   },
- {
+  {
     component: CNavItem,
     name: 'Lisanslar',
     to: '/lisans',
-    
+    component: NavLink,
   },
   {
     component: CNavItem,
     name: 'Ödeme İşlemleri',
     to: '/odemeler',
-    badge: {
-      
-    },
+    component: NavLink,
   },
   {
     component: CNavTitle,
@@ -238,20 +146,20 @@ const _nav = [
     name: 'Pages',
     icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
     items: [
-      
       {
         component: CNavItem,
         name: 'Error 404',
         to: '/404',
+        component: NavLink,
       },
       {
         component: CNavItem,
         name: 'Error 500',
         to: '/500',
+        component: NavLink,
       },
     ],
   },
- 
 ]
 
 export default _nav

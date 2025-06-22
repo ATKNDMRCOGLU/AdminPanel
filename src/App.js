@@ -7,8 +7,8 @@ import './scss/examples.scss'
 
 import MusteriListesi from './views/musteriler/musteri_listesi'
 import YeniMusteriEkle from './views/musteriler/yeni_musteri_ekle'
+import Dashboard from './views/dashboard/Dashboard' // Dashboard component import et
 
-// Lazy importlar
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
 const Login = React.lazy(() => import('./views/pages/login/Login'))
 const Register = React.lazy(() => import('./views/pages/register/Register'))
@@ -27,19 +27,29 @@ function App() {
     }
     if (isColorModeSet()) return
     setColorMode(storedTheme)
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <Suspense fallback={<CSpinner color="primary" />}>
       <HashRouter>
         <Routes>
-          <Route path="/*" element={<DefaultLayout />} />
+          {/* Ortak layout altında alt sayfalar */}
+          <Route path="/" element={<DefaultLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="musteriler" element={<MusteriListesi />} />
+            <Route path="musteri-ekle" element={<YeniMusteriEkle />} />
+            {/* İstersen diğer route'lar */}
+          </Route>
+
+          {/* Layout dışı sayfalar */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/404" element={<Page404 />} />
           <Route path="/500" element={<Page500 />} />
-          <Route path="/musteri-listesi" element={<MusteriListesi />} />
-          <Route path="/musteri-ekle" element={<YeniMusteriEkle />} />
+
+          {/* Yakalayamadığı sayfalar için 404 yönlendirmesi */}
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </HashRouter>
     </Suspense>
