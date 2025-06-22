@@ -29,7 +29,7 @@ const _nav = [
       {
         component: CNavItem,
         name: 'Müşteri Listesi',
-        to: '/musteriler', // 🔧 DÜZELTİLDİ
+        to: '/musteriler',
         component: NavLink,
       },
       {
@@ -47,66 +47,18 @@ const _nav = [
       {
         component: CNavItem,
         name: 'İş Ortağı Listesi',
-        to: '/isortaklari/is-ortaklari-listesi',
+        to: '/partners',
         component: NavLink,
       },
       {
         component: CNavItem,
         name: 'Yeni İş Ortağı Ekle',
-        to: '/isortaklari/yeni-is-ortagi-ekle',
+        to: '/partners/create',
         component: NavLink,
       },
     ],
   },
-  {
-    component: CNavGroup,
-    name: 'Forms',
-    icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
-    items: [
-      {
-        component: CNavItem,
-        name: 'Form Control',
-        to: '/forms/form-control',
-        component: NavLink,
-      },
-      {
-        component: CNavItem,
-        name: 'Select',
-        to: '/forms/select',
-        component: NavLink,
-      },
-      {
-        component: CNavItem,
-        name: (
-          <>
-            Multi Select
-            <CIcon icon={cilExternalLink} size="sm" className="ms-2" />
-          </>
-        ),
-        href: 'https://coreui.io/react/docs/forms/multi-select/',
-        badge: { color: 'danger', text: 'PRO' },
-      },
-      {
-        component: CNavItem,
-        name: 'Checks & Radios',
-        to: '/forms/checks-radios',
-        component: NavLink,
-      },
-      {
-        component: CNavItem,
-        name: 'Range',
-        to: '/forms/range',
-        component: NavLink,
-      },
-    ],
-  },
-  {
-    component: CNavItem,
-    name: 'Charts',
-    to: '/charts',
-    icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
-    component: NavLink,
-  },
+    
   {
     component: CNavGroup,
     name: 'Ürünler',
@@ -137,29 +89,7 @@ const _nav = [
     to: '/odemeler',
     component: NavLink,
   },
-  {
-    component: CNavTitle,
-    name: 'Extras',
-  },
-  {
-    component: CNavGroup,
-    name: 'Pages',
-    icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
-    items: [
-      {
-        component: CNavItem,
-        name: 'Error 404',
-        to: '/404',
-        component: NavLink,
-      },
-      {
-        component: CNavItem,
-        name: 'Error 500',
-        to: '/500',
-        component: NavLink,
-      },
-    ],
-  },
+  
 ]
 
 export default _nav

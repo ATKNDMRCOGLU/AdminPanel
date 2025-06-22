@@ -7,6 +7,8 @@ const MusteriListesi = React.lazy(() => import('./views/musteriler/musteri_liste
 const YeniMusteriEkle = React.lazy(() => import('./views/musteriler/yeni_musteri_ekle'))
 const Page404 = React.lazy(() => import('./views/pages/page404/Page404'))
 const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
+const PartnerListPage = React.lazy(() => import('./views/partners/PartnerListPage'))
+const Partner_Create_Form = React.lazy(() => import('./views/partners/Partner_Create_Form'))
 
 
 
@@ -55,10 +57,12 @@ const Badges = React.lazy(() => import('./views/notifications/badges/Badges'))
 const Modals = React.lazy(() => import('./views/notifications/modals/Modals'))
 const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 
+
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 const routes = [
-  
+  { path: '/partners', name: 'Partnerler', element: PartnerListPage },
+  { path: '/partners/create', name: 'Yeni Partner Ekle', element: Partner_Create_Form },
   { path: '/musteriler', name: 'Müşteri Listesi', element: MusteriListesi },
   { path: '/musteri-ekle', name: 'Yeni Müşteri Ekle', element: YeniMusteriEkle },
   { path: '/', exact: true, name: 'Home' },

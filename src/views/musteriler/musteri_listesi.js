@@ -31,7 +31,7 @@ const initialCustomers = [
 ];
 
 const styles = {
-  container: { display: "flex", fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif", backgroundColor: "#121212", minHeight: "100vh", color: "#e0e0e0" },
+  container: { display: "flex", fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif", backgroundColor: "transparent", minHeight: "100vh", color: "#e0e0e0" },
   main: { flex: 1, padding: "20px" },
   table: {
     width: "100%",

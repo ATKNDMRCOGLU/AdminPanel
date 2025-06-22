@@ -5,9 +5,9 @@ const styles = {
     maxWidth: '800px',
     margin: '0 auto',
     padding: '40px 24px',
-    backgroundColor: '#1e1e2f',
+    backgroundColor: 'transparent',
     borderRadius: '12px',
-    color: '#e0e0e0',
+    color: 'transparent',
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
   },
   title: {

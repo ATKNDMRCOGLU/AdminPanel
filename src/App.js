@@ -8,6 +8,10 @@ import './scss/examples.scss'
 import MusteriListesi from './views/musteriler/musteri_listesi'
 import YeniMusteriEkle from './views/musteriler/yeni_musteri_ekle'
 import Dashboard from './views/dashboard/Dashboard' // Dashboard component import et
+import PartnerCreateForm from './views/partners/Partner_Create_Form'
+import PartnerListPage from './views/partners/PartnerListPage'
+
+
 
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
 const Login = React.lazy(() => import('./views/pages/login/Login'))
@@ -37,9 +41,13 @@ function App() {
           <Route path="/" element={<DefaultLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path="musteriler" element={<MusteriListesi />} />
-            <Route path="musteri-ekle" element={<YeniMusteriEkle />} />
-            {/* İstersen diğer route'lar */}
+            <Route path="/musteriler" element={<MusteriListesi />} />
+            <Route path="/musteri-ekle" element={<YeniMusteriEkle />} />
+            <Route path="/partners" element={<PartnerListPage />} />
+            <Route path="/partners/create" element={<PartnerCreateForm />} />
+            {/* Diğer sayfalar */}
+            
+            
           </Route>
 
           {/* Layout dışı sayfalar */}
