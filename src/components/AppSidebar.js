@@ -42,8 +42,8 @@ const AppSidebar = () => {
             src="./src/assets/images/klovologo.png"
             className="sidebar-brand-full"
             alt="KLOVO Logo"
-            width="200px"
-            height="100px"
+            width="100px"
+            height="40px"
             style={{ cursor: 'pointer'}}
             onClick={() => window.location.href = '/dashboard'}
           />
@@ -56,11 +56,7 @@ const AppSidebar = () => {
         />
       </CSidebarHeader>
       <AppSidebarNav items={navigation} />
-      <CSidebarFooter className="border-top d-none d-lg-flex">
-        <CSidebarToggler
-          onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfoldable })}
-        />
-      </CSidebarFooter>
+      
     </CSidebar>
   )
 }

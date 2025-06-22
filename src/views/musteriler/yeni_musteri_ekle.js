@@ -43,7 +43,7 @@ const styles = {
     fontSize: '1rem',
     borderRadius: '6px',
     border: '1px solid #4c4c6d',
-    backgroundColor: '#2a2a40',
+    backgroundColor: '#fffff',
     color: '#e0e0e0',
     boxSizing: 'border-box',
   },

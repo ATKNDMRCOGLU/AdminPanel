@@ -1,3 +1,4 @@
+import { cilOpacity } from '@coreui/icons';
 import React, { useState } from 'react';
 
 const styles = {
@@ -42,8 +43,8 @@ const styles = {
     padding: '10px 14px',
     fontSize: '1rem',
     borderRadius: '6px',
-    border: '1px solid #4c4c6d',
-    backgroundColor: '#2a2a40',
+    border: '1px solidrgb(255, 255, 255)',
+    backgroundColor: '#fffff',
     color: '#e0e0e0',
     boxSizing: 'border-box',
   },
@@ -54,8 +55,8 @@ const styles = {
     padding: '10px 14px',
     fontSize: '1rem',
     borderRadius: '6px',
-    border: '1px solid #4c4c6d',
-    backgroundColor: '#2a2a40',
+    border: '1px solidrgb(255, 255, 255)',
+    backgroundColor: '#fffff',
     color: '#e0e0e0',
     boxSizing: 'border-box',
     resize: 'none',
@@ -66,7 +67,7 @@ const styles = {
     fontSize: '1rem',
     borderRadius: '6px',
     border: '1px solid #4c4c6d',
-    backgroundColor: '#2a2a40',
+    backgroundColor: '#fffff',
     color: '#e0e0e0',
     boxSizing: 'border-box',
     appearance: 'none',
@@ -193,7 +194,7 @@ export default function PartnerCreateForm() {
                 type="text"
                 value={form.taxIdNumber}
                 onChange={handleChange}
-                placeholder="1234567890"
+                
                 required
                 style={styles.input}
               />
@@ -209,7 +210,7 @@ export default function PartnerCreateForm() {
                 type="text"
                 value={form.userName}
                 onChange={handleChange}
-                placeholder="partner123"
+                
                 style={styles.input}
               />
             </div>
@@ -224,7 +225,7 @@ export default function PartnerCreateForm() {
                 type="text"
                 value={form.title}
                 onChange={handleChange}
-                placeholder="ABC Teknoloji Ltd."
+                
                 required
                 style={styles.input}
               />
@@ -260,7 +261,7 @@ export default function PartnerCreateForm() {
                 type="tel"
                 value={form.phoneNumber}
                 onChange={handleChange}
-                placeholder="+90 212 123 45 67"
+                
                 required
                 style={styles.input}
               />
@@ -276,7 +277,7 @@ export default function PartnerCreateForm() {
                 type="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="info@firma.com"
+                
                 required
                 style={styles.input}
               />
@@ -292,7 +293,7 @@ export default function PartnerCreateForm() {
                 type="text"
                 value={form.taxOffice}
                 onChange={handleChange}
-                placeholder="Beşiktaş"
+                
                 style={styles.input}
               />
             </div>
@@ -307,7 +308,7 @@ export default function PartnerCreateForm() {
                 type="text"
                 value={form.city}
                 onChange={handleChange}
-                placeholder="İstanbul"
+                
                 style={styles.input}
               />
             </div>
@@ -322,7 +323,7 @@ export default function PartnerCreateForm() {
                 type="text"
                 value={form.district}
                 onChange={handleChange}
-                placeholder="Beşiktaş"
+                
                 style={styles.input}
               />
             </div>
@@ -337,7 +338,7 @@ export default function PartnerCreateForm() {
             name="address"
             value={form.address}
             onChange={handleChange}
-            placeholder="Tam adres bilgisi"
+            
             style={{ ...styles.textarea, ...styles.inputFullWidth }}
             rows={3}
           />
@@ -357,7 +358,7 @@ export default function PartnerCreateForm() {
                 type="text"
                 value={form.authorizedPersonFirstName}
                 onChange={handleChange}
-                placeholder="Ahmet"
+                
                 style={styles.input}
               />
             </div>
@@ -371,7 +372,7 @@ export default function PartnerCreateForm() {
                 type="text"
                 value={form.authorizedPersonLastName}
                 onChange={handleChange}
-                placeholder="Yılmaz"
+                
                 style={styles.input}
               />
             </div>
@@ -385,7 +386,7 @@ export default function PartnerCreateForm() {
                 type="text"
                 value={form.authorizedPersonTitle}
                 onChange={handleChange}
-                placeholder="Genel Müdür"
+                
                 style={styles.input}
               />
             </div>
@@ -399,7 +400,7 @@ export default function PartnerCreateForm() {
                 type="email"
                 value={form.authorizedPersonEmail}
                 onChange={handleChange}
-                placeholder="ahmet@firma.com"
+                
                 style={styles.input}
               />
             </div>
@@ -413,7 +414,7 @@ export default function PartnerCreateForm() {
                 type="tel"
                 value={form.authorizedPersonPhoneNumber}
                 onChange={handleChange}
-                placeholder="+90 532 123 45 67"
+               
                 style={styles.input}
               />
             </div>
@@ -425,12 +426,12 @@ export default function PartnerCreateForm() {
           <h3 style={styles.sectionTitle}>Belgeler</h3>
           <div style={styles.grid2}>
             {[
-              { label: 'Sözleşme', name: 'contractDocument', placeholder: 'sozlesme.pdf' },
-              { label: 'Vergi Levhası', name: 'taxPlateDocument', placeholder: 'vergi_levhasi.pdf' },
-              { label: 'İmza', name: 'signatureDocument', placeholder: 'imza.pdf' },
-              { label: 'Ticaret Sicil Gazetesi', name: 'tradeRegistryGazetteDocument', placeholder: 'ticaret_sicil.pdf' },
-              { label: 'Faaliyet Belgesi', name: 'activityCertificateDocument', placeholder: 'faaliyet_belgesi.pdf' },
-              { label: 'Kimlik', name: 'identityDocument', placeholder: 'kimlik.pdf' },
+              { label: 'Sözleşme', name: 'contractDocument',},
+              { label: 'Vergi Levhası', name: 'taxPlateDocument',},
+              { label: 'İmza', name: 'signatureDocument',},
+              { label: 'Ticaret Sicil Gazetesi', name: 'tradeRegistryGazetteDocument',},
+              { label: 'Faaliyet Belgesi', name: 'activityCertificateDocument',},
+              { label: 'Kimlik', name: 'identityDocument',},
             ].map(({ label, name, placeholder }) => (
               <div key={name}>
                 <label htmlFor={name} style={styles.label}>
@@ -442,7 +443,7 @@ export default function PartnerCreateForm() {
                   type="text"
                   value={form[name]}
                   onChange={handleChange}
-                  placeholder={placeholder}
+                  
                   style={styles.input}
                 />
               </div>
@@ -458,7 +459,6 @@ export default function PartnerCreateForm() {
             name="description"
             value={form.description}
             onChange={handleChange}
-            placeholder="Partner hakkında notlar..."
             style={{ ...styles.textarea, ...styles.inputFullWidth }}
             rows={3}
           />
